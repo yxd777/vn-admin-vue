@@ -2,7 +2,7 @@
  * @Author: yxd
  * @Date: 2023-02-13 12:42:18
  * @LastEditors: yxd777 792164257@qq.com
- * @LastEditTime: 2023-02-13 18:30:34
+ * @LastEditTime: 2023-02-13 22:50:27
  * @Description: 
 -->
 <template>
@@ -46,9 +46,11 @@
 <script lang="ts">
 import { computed, defineComponent, reactive } from 'vue'
 import axios from '@/utils/axios'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   setup() {
+    const router = useRouter()
     const loginInfo = reactive({
       username: "",
       usernameMsg: computed(() => {
@@ -73,9 +75,10 @@ export default defineComponent({
     })
 
     const submit = () => {
-      axios.post('/auth/login', loginInfo).then(res => {
-        console.log(res);
-      })
+      router.push('/home')
+      // axios.post('/auth/login', loginInfo).then(res => {
+      //   console.log(res);
+      // })
 
     }
     return {

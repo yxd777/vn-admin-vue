@@ -1,67 +1,81 @@
-<!--
- * @Author: yxd
- * @Date: 2023-02-13 23:08:22
- * @LastEditors: yxd777 792164257@qq.com
- * @LastEditTime: 2023-02-13 23:08:28
- * @Description: 
--->
 <template>
-  <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+    <div class="container-fluid">
+      <i class="fas fa-bars"></i>
+      <ul class="navbar-nav d-flex justify-content-between align-items-center">
+        <li class="nav-item me-3">
+          <i class="fas fa-comments"></i>
+        </li>
+        <li class="nav-item me-3">
+          <i class="fas fa-cog"></i>
+        </li>
+        <li class="nav-item me-3">
+          <i class="far fa-envelope-open"></i>
+        </li>
+        <li class="nav-item ms-4">
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20" style="height: 60px">
+              <img alt="" class="avatar-circle" :src="header" width="38" height="38" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-lg-end my-0 py-0" style="background: #FFFFFF" aria-labelledby="dropdownMenuButton1">
+              <li class="dropdwn-item px-3 py-2 text-sencondary bg-light">
+                账号
+              </li>
+              <li class="dropdwn-item px-4 py-2">
+                <i class="fas fa-comments me-3"></i>
+                <span>更新消息</span>
+              </li>
+              <li class="dropdwn-item px-4 py-2">
+                <i class="far fa-envelope-open me-3"></i>
+                <span>评论信息</span>
+              </li>
+              <!-- 设置 -->
+              <li class="dropdwn-item px-3 py-2 text-sencondary bg-light">
+                设置
+              </li>
+              <li class="dropdwn-item px-4 py-2">
+                <i class="fas fa-user me-3"></i>
+                <span>个人信息</span>
+              </li>
+              <li class="dropdwn-item px-4 py-2">
+                <i class="fas fa-credit-card me-3"></i>
+                <span>支付信息</span>
+              </li>
+              <li class="dropdwn-item px-4 py-2">
+                <i class="fas fa-cogs me-3"></i>
+                <span>系统设置</span>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li class="dropdwn-item px-4 py-2">
+                <i class="fas fa-sign-out-alt me-3"></i>
+                <span>退出</span>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
+import header from "@/assets/headers.jpg?url";
 
 export default defineComponent({
   setup() {
-
-
-    return {}
-  }
-})
+    return {
+      header,
+    };
+  },
+});
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+i {
+  font-size: 1.2rem;
+  color: #6c737d;
+}
 </style>

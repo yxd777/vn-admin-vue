@@ -1,12 +1,7 @@
-<!--
- * @Author: yxd
- * @Date: 2023-02-13 23:11:06
- * @LastEditors: yxd777 792164257@qq.com
- * @LastEditTime: 2023-02-13 23:34:59
- * @Description: 
--->
 <template>
   <div>
+    <i class="fas fa-walking"></i>
+    <i class="fas fa-walking"></i>
     <table class="table table-bordered table-hover table-striped">
       <thead>
         <tr>
@@ -37,29 +32,26 @@
       </tbody>
     </table>
     <nav aria-label="Page navigation example">
-<ul class="pagination">
-<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-<li class="page-item"><a class="page-link" href="#">1</a></li>
-<li class="page-item"><a class="page-link" href="#">2</a></li>
-<li class="page-item"><a class="page-link" href="#">3</a></li>
-<li class="page-item"><a class="page-link" href="#">Next</a></li>
-</ul>
-</nav>
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
   setup() {
-
-
-    return {}
-  }
-})
+    return {};
+  },
+});
 </script>
 
 <style scoped>
-
 </style>

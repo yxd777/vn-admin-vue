@@ -1,47 +1,48 @@
-<!--
- * @Author: yxd
- * @Date: 2023-02-13 22:34:08
- * @LastEditors: yxd777 792164257@qq.com
- * @LastEditTime: 2023-02-13 23:59:22
- * @Description: 
--->
-<template> 
-  <div>
-    <div class="row">
-      <div class="col-3">
-        <SidebarNav :menus="store.menus"/>
+<template>
+  <div class="container-fluid">
+    <div class="row vh-100">
+      <div class="col-3 col-xxl-2 px-0 d-flex flex-column">
+        <div class="fs-4 text-light bg d-flex justify-content-center align-items-center" style="height: 64px">ads通用业务框架</div>
+        <!-- 左侧菜单栏组件 -->
+        <SidebarNav :menus="store.menus" />
       </div>
-      <div class="col-9">
-        <div class="row">
-          <div class="container-fluid">
-            <HeaderNav/>
-            <router-view></router-view>
+      <div class="col-9 col-xxl-10">
+        <div class="row vh-100">
+          <div class="container-fluid px-0 d-flex flex-column">
+            <!-- 头部导航 -->
+            <HeaderNav />
+            <Bread />
+            <!-- 主体内容 -->
+            <router-view class="bg-light flex-fill p-3"></router-view>
           </div>
-        </div> 
+        </div>
       </div>
     </div>
   </div>
-
 </template>
 
 <script lang="ts">
-import SidebarNav from '@/components/SidebarNav.vue'
-import HeaderNav from '@/components/HeaderNav.vue'
-import { defineComponent } from 'vue'
-import { useMenusStore } from '@/store/menu'
+import { defineComponent } from "vue";
+import { useMenusStore } from "@/store/menus";
+
+import SidebarNav from "@/components/SidebarNav.vue";
+import HeaderNav from "@/components/HeaderNav.vue";
+import Bread from "@/components/Bread.vue";
 
 export default defineComponent({
-  components:{SidebarNav,HeaderNav},
-  setup () {
-    const store= useMenusStore()
-
+  components: {
+    SidebarNav,
+    HeaderNav,
+    Bread,
+  },
+  setup() {
+    const store = useMenusStore();
     return {
-      store
-    }
-  }
-})
+      store,
+    };
+  },
+});
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
 </style>
